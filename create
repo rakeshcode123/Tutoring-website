@@ -1,0 +1,5 @@
+npx create-next-app tutoring-site
+cd tutoring-site
+npm install stripe
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
