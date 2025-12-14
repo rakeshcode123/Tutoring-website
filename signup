@@ -1,0 +1,30 @@
+"use client";
+
+export default function ClassCard({ title, price }: any) {
+  const handleCheckout = async () => {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        className: title,
+        price,
+      }),
+    });
+
+    const data = await res.json();
+    window.location.href = data.url;
+  };
+
+  return (
+    <div className="border p-6 rounded-lg shadow">
+      <h2 className="text-xl font-bold">{title}</h2>
+      <p className="my-2">${price}</p>
+      <button
+        onClick={handleCheckout}
+        className="bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Sign Up & Pay
+      </button>
+    </div>
+  );
+}
