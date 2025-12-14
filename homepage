@@ -1,0 +1,18 @@
+import ClassCard from "@/components/ClassCard";
+
+export default function Home() {
+  return (
+    <main className="p-10">
+      <h1 className="text-3xl font-bold mb-6">
+        📘 Tutoring Classes
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ClassCard title="Math Tutoring" price={50} />
+        <ClassCard title="SAT Prep" price={75} />
+        <ClassCard title="Science Tutoring" price={60} />
+      </div>
+    </main>
+  );
+}
+
